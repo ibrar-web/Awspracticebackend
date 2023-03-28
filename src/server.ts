@@ -66,6 +66,14 @@ app.get('/delete',(req: Request, res: Response)=>{
      
   }
  });
+ app.get('/test',(req,res)=>{
+
+   try {
+    res.send('app working')
+   } catch (error) {
+    
+   }
+ })
 
 app.listen(port, ()=> {
 console.log(`[Server]: I am running at https://localhost:${port}`);
