@@ -18,7 +18,7 @@ const upload = multer({
   }
 });
 const app: Express = express();
-const port = 80;
+const port = 5500;
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(cors({
