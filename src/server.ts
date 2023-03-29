@@ -49,11 +49,11 @@ app.post('/image', upload.single('image'),(req: Request, res: Response)=>{
     
  }
 });
-app.get('/delete',(req: Request, res: Response)=>{
+app.get('/delete/:objectkey',(req: Request, res: Response)=>{
   try {
    const s3params = {
      Bucket: 'myfirsttestbucket1212',
-     Key: `1679991266380.Screenshot 2023-03-20 at 18.01.16 (2).png`,
+     Key: `${req.params.objectkey}`,
    };
    s3.deleteObject(s3params, (err:any, data:any) => {
      if (err) {
