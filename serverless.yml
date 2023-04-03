@@ -1,0 +1,20 @@
+service: my-first-service12343
+provider:
+  name: aws
+  memorySize: 2048
+  stage: dev
+  timeout: 15
+  region: us-east-1
+  runtime: nodejs18.x
+package:
+  exclude:
+    - dist/**
+    # - node_modules/**
+functions:
+  server:
+    handler: handler.handle
+    events:
+      - http: ANY /{proxy+}
+      - http: ANY / 
+plugins:
+  - serverless-plugin-typescript

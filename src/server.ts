@@ -76,5 +76,6 @@ app.get('/delete/:objectkey',(req: Request, res: Response)=>{
  })
 
 app.listen(port, ()=> {
-console.log(`[Server]: I am running at https://localhost:${port}`);
+    console.log(`[Server]: I am running at https://localhost:${port}`);
 });
+export default app;
